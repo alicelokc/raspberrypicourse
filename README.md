@@ -1,6 +1,6 @@
 # raspberrypicourse
 
-<h5>Installing Dependencies for using OLED screen<h5>
+##Installing Dependencies for using OLED screen
 
 Install the latest version of the library directly from PyPI with:
 
