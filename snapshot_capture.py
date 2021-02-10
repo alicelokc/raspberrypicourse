@@ -25,14 +25,14 @@ camera.awb_gains = g
 
 # Take the photo and store in the images folder, with the filename of a unxi timestamp
 #camera.capture('/home/pi/raspberrypicourse/time-lapse/%s.jpg' % (datetime.datetime.now()))
-camera.capture('./time-lapse/%s.jpg' % (datetime.datetime.now()))
+camera.capture('/home/pi/raspberrypicourse/imgs/%s.jpg' % (datetime.datetime.now()))
 
-with imageio.get_writer('./time-lapse/animate.gif', mode ='I') as writer:
-    filenames = glob.glob("./time-lapse/*.jpg")
+with imageio.get_writer('/home/pi/raspberrypicourse/result.gif', mode ='I') as writer:
+    filenames = glob.glob("/home/pi/raspberrypicourse/img/*.jpg")
     for filename in filenames:
         image = imageio.imread(filename)
         writer.append_data(image)
 
-os.system("sudo cp ./time-lapse/animate.gif /var/www/html")
+os.system("sudo cp /home/pi/raspberrypicourse/result.gif /var/www/html")
         
 
