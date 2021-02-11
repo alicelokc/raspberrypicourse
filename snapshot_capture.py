@@ -28,7 +28,7 @@ camera.awb_gains = g
 camera.capture('/home/pi/raspberrypicourse/imgs/%s.jpg' % (datetime.datetime.now()))
 
 with imageio.get_writer('/home/pi/raspberrypicourse/result.gif', mode ='I') as writer:
-    filenames = glob.glob("/home/pi/raspberrypicourse/img/*.jpg")
+    filenames = glob.glob("/home/pi/raspberrypicourse/imgs/*.jpg")
     for filename in filenames:
         image = imageio.imread(filename)
         writer.append_data(image)
